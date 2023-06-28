@@ -1,0 +1,10 @@
+type ImplementationType = 
+ variant {
+   AvailableCycles;
+   BlackholeCanister;
+   CygnusLibrary;
+ };
+
+service : {
+   registerProjectCanister: (text, text, text, ImplementationType) -> (text);
+}
