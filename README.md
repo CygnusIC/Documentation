@@ -50,13 +50,13 @@ let CygnusCanitser = actor (CYGNUS_CANISTER_ID) : actor {
                       canisterName : Text,
                       implementationType : implementationType,
                     ) -> (Text);
+};
 
 //Example
 public shared(msg) func registerCanister() : async Text {
 	await CygnusCanitser.registerProjectCanister("upr_7X32NXTQD304NABSZVMM6MB4R3", "mpaq5-4aapa-nqaag-qlppa-cai", "NFT", "CygnusLibrary");
 };
 
-}
 ```
 
 Please note that in the **registerProjectCanister** function, you need to provide the appropriate values for **projectId**, **canisterId**, **canisterName**, and **implementationType** to register the desired canister.
