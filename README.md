@@ -4,7 +4,6 @@ The Cygnus Tool provides users with three different implementation types for add
 
 1. **Cygnus Library**: Import Cygnus code into your Canister using one of the following programming languages:
    - [Motoko](https://github.com/CygnusIC/SDK/tree/master/motoko)
-   - [Rust](https://github.com/CygnusIC/SDK/tree/master/rust)
 
    In addition, you can view a list of controllers and withdraw cycles from this type of canister.
 
