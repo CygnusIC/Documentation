@@ -54,7 +54,7 @@ let CygnusCanitser = actor (CYGNUS_CANISTER_ID) : actor {
 
 //Example
 public shared(msg) func registerCanister() : async Text {
-	await CygnusCanitser.registerProjectCanister("upr_7X32NXTQD304NABSZVMM6MB4R3", "mpaq5-4aapa-nqaag-qlppa-cai", "NFT", "CygnusLibrary");
+	await CygnusCanitser.registerProjectCanister("upr_7X32NXTQD304NABSZVMM6MB4R3", "mpaq5-4aapa-nqaag-qlppa-cai", "NFT", #CygnusLibrary);
 };
 
 ```
