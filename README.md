@@ -20,10 +20,10 @@ The Cygnus Tool provides users with three different implementation types for add
 		return Cycles.balance();
 	};
 	```
-   You can also whitelist the following two PrincipalIds to restrict access and only Cygnys can retrive the cycles data. 
+   You can also whitelist the following PrincipalId to restrict access and only Cygnys can retrieve the cycles data. 
    
   CYGNUS_CANISTER_ID: "dowzh-nyaaa-aaaai-qnowq-cai"
-  CYGNUS_IDENTIRY_ID: ""
+
   
  For this type of canister, controllers and the ability to withdraw cycles are not visible.
 
