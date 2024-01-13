@@ -30,33 +30,43 @@ The Cygnus Tool provides users with three different implementation types for add
 ## There are two ways to add a canister to the Cygnus Tool:
 
 1. **Using the Front-End Tool**: Utilize the front-end tool provided.
-2. **Using Cygnus Candid File**: Add the canister using the [Cygnus candid file](https://github.com/CygnusIC/implementation-/blob/main/Cygnus.did).
+2. **Using Cygnus Candid File**: Add the canister using the [Cygnus candid file](https://github.com/CygnusIC/Documentation/blob/main/Cygnus.did).
 
    An example is provided below in Motoko:
 
 ```Motoko
-let CYGNUS_CANISTER_ID = "dowzh-nyaaa-aaaai-qnowq-cai";
+    public shared(msg) func registerCanisterTest() : async Text {
 
-public type implementationType = {
-	#AvailableCycles;
-	#BlackholeCanister;
-	#CygnusLibrary;
-};
+        let CYGNUS_CANISTER_ID = "dowzh-nyaaa-aaaai-qnowq-cai";
+        type implementationType = {
+                #AvailableCycles;
+                #BlackholeCanister;
+                #CygnusLibrary;
+            };
 
-let CygnusCanitser = actor (CYGNUS_CANISTER_ID) : actor {
-                      registerProjectCanister : shared (
-                      projectId : Text,
-                      canisterId : Text,
-                      canisterName : Text,
-                      implementationType : implementationType,
-                    ) -> (Text);
-};
+        let CygnusCanitser = actor (CYGNUS_CANISTER_ID) : actor {
+                            registerProjectCanister : shared (
+                                {
+                                    projectId : Text;
+                                    canisterIdToBeRegistered : Text;
+                                    canisterName : Text;
+                                    implementationType : implementationType;
+                                    topUpAmountInTrillon: ?Float;
+                                    thresholdAmountInTrillon:?Float;
+                                })-> async (Text);
+        };
 
-//Example
-public shared(msg) func registerCanister() : async Text {
-	await CygnusCanitser.registerProjectCanister("upr_7X32NXTQD304NABSZVMM6MB4R3", "mpaq5-4aapa-nqaag-qlppa-cai", "NFT", #CygnusLibrary);
-};
+        await CygnusCanitser.registerProjectCanister({
+            projectId = "upr_0E5CHK7ZYP4XRTK807VFSZCQTH";
+            canisterIdToBeRegistered = "r75rh-rqaaa-aaaah-qctda-cai";
+            canisterName = "Eleos";
+            implementationType = #AvailableCycles;
+            topUpAmountInTrillon = ?15.0;
+            thresholdAmountInTrillon = ?5.0;
+        });
+    };
 
+//if you do not pass topUpAmountInTrillon and thresholdAmountInTrillon values, we set the default values to 4.00T and 1.00T respectfully. 
 ```
 
 Please note that in the **registerProjectCanister** function, you need to provide the appropriate values for **projectId**, **canisterId**, **canisterName**, and **implementationType** to register the desired canister.
