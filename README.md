@@ -35,7 +35,7 @@ The Cygnus Tool provides users with three different implementation types for add
    An example is provided below in Motoko:
 
 ```Motoko
-    public shared(msg) func registerCanisterTest() : async Text {
+    public shared(msg) func registerCanister() : async Text {
 
         let CYGNUS_CANISTER_ID = "dowzh-nyaaa-aaaai-qnowq-cai";
         type implementationType = {
