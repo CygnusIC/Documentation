@@ -42,6 +42,7 @@ The Cygnus Tool provides users with three different implementation types for add
                 #AvailableCycles;
                 #BlackholeCanister;
                 #CygnusLibrary;
+		#SnsCanister;
             };
 
         let CygnusCanitser = actor (CYGNUS_CANISTER_ID) : actor {
